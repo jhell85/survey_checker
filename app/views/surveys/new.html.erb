@@ -1,0 +1,16 @@
+<% if @survey.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @survey.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<h1>New surveys</h1>
+
+<%= form_for @survey do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit  %>
+<% end %>
